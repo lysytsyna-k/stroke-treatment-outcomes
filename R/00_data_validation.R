@@ -32,7 +32,6 @@ if (!dir.exists(figure_dir)) {
     dir.create(figure_dir, recursive = TRUE)
 }
 
-
 # --------------------
 # Helper functions
 # --------------------
@@ -41,25 +40,11 @@ if (!dir.exists(figure_dir)) {
 classify_variable <- function(x, max_cat = 10) {
     n_unique <- length(unique(na.omit(x)))
 
-    if (n_unique <= 1) {
-        return("constant")
-    }
-
-    if (n_unique == 2) {
-        return("binary")
-    }
-
-    if (is.character(x) && n_unique > max_cat) {
-        return("high-cardinality character")
-    }
-
-    if (n_unique <= max_cat) {
-        return("categorical")
-    }
-
-    if (is.numeric(x)) {
-        return("continuous")
-    }
+    if (n_unique <= 1) {return("constant")}
+    if (n_unique == 2) {return("binary")}
+    if (is.character(x) && n_unique > max_cat) {return("high-cardinality character")}
+    if (n_unique <= max_cat) {return("categorical")}
+    if (is.numeric(x)) {return("continuous")}
 
     return("other")
 }
@@ -100,20 +85,13 @@ summarize_categories <- function(df, vars) {
 }
 
 # Shows frequency counts for one categorical variable
-check_values <- function(var) {
-    table(var, useNA = "ifany")
-}
+check_values <- function(var) {table(var, useNA = "ifany")}
 
 # Compares two related categorical variables using a cross-tabulation
-compare_vars <- function(var1, var2) {
-    table(var1, var2, useNA = "ifany")
-}
+compare_vars <- function(var1, var2) {table(var1, var2, useNA = "ifany")}
 
 # Summarizes a numeric variable to check range, center, and missingness
-check_numeric <- function(var) {
-    summary(var)
-}
-
+check_numeric <- function(var) {summary(var)}
 
 # --------------------
 # Plot functions
@@ -185,9 +163,7 @@ plot_missingness <- function(missing_summary, min_percent = 1) {
         height = 1000
     )
 
-    par(
-        mar = c(5, 10, 4, 2)
-    )
+    par(mar = c(5, 10, 4, 2))
 
     barplot(
         plot_data$missing_percent,
@@ -220,7 +196,6 @@ main <- function() {
 
     write_csv(schema_summary, file.path(table_dir, "schema_summary.csv"))
 
-
     # --------------------
     # Variable groups
     # --------------------
@@ -250,7 +225,6 @@ main <- function() {
         filter(statistical_type == "constant") |>
         pull(column)
 
-
     # --------------------
     # Categorical validation
     # --------------------
@@ -260,7 +234,6 @@ main <- function() {
     print(category_summary)
 
     write_csv(category_summary, file.path(table_dir, "categorical_value_counts.csv"))
-
 
     # --------------------
     # Continuous variable validation
@@ -277,13 +250,11 @@ main <- function() {
     )
 
     print(numeric_summary)
-
     write_csv(numeric_summary, file.path(table_dir, "numeric_summary.csv"))
 
     for (var in continuous_vars) {
         plot_numeric(data[[var]], var)
     }
-
 
     # --------------------
     # Form-level vs standardized outcomes
@@ -311,7 +282,6 @@ main <- function() {
         )
     }
 
-
     # --------------------
     # Treatment assignment vs treatment received
     # --------------------
@@ -326,7 +296,6 @@ main <- function() {
             print(compare_vars(data[[assigned]], data[[received]]))
         }
     }
-
 
     # --------------------
     # Missingness
@@ -347,16 +316,14 @@ main <- function() {
     write_csv(missing_summary, file.path(table_dir, "missingness_summary.csv"))
     plot_missingness(missing_summary)
 
-
     # --------------------
     # Additional validation groups
     # --------------------
+    high_cardinality_summary <- data.frame(variable = high_cardinality_vars)
+    write_csv(high_cardinality_summary, file.path(table_dir, "high_cardinality_variables.csv"))
 
-    print("High-cardinality character variables:")
-    print(high_cardinality_vars)
-
-    print("Constant variables:")
-    print(constant_vars)
+    constant_summary <- data.frame(variable = constant_vars)
+    write_csv(constant_summary,file.path(table_dir, "constant_variables.csv"))
 }
 
 main()
