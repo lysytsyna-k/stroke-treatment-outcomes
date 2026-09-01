@@ -1,0 +1,4 @@
+variable,Number of observations,Missing values,Mean,Standard deviation,Median,First quartile,Third quartile,Interquartile range
+AGE,19435,0,71.7154103421662,11.619713810056053,73,65,80,15
+RDELAY,19435,0,20.124363262155903,12.470329949601908,19,9,29,20
+RSBP,19435,0,160.15919732441472,27.610382137602006,160,140,180,40

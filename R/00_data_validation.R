@@ -324,6 +324,20 @@ main <- function() {
 
     constant_summary <- data.frame(variable = constant_vars)
     write_csv(constant_summary,file.path(table_dir, "constant_variables.csv"))
+
+    # -------------------
+    # 6-month outcome consistency
+    # -------------------
+    occode_zero_check <- data |>
+    filter(OCCODE==0) |>
+    count(FDEAD, FRECOVER, FDENNIS, sort=TRUE)
+    
+    print(occode_zero_check)
+
+    write_csv(occode_zero_check, file.path(table_dir, "occode_zero_validation.csv"))
+
+
 }
+
 
 main()

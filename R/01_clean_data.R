@@ -28,6 +28,9 @@ drop_vars <- c(
     "DDEADD",
     "FLASTD",
     "FDEADD",
+    "FU1_RECD",
+    "FU2_DONE",
+    "FU1_COMP",
 
     # Free-text fields
     "DMAJNCHX",
