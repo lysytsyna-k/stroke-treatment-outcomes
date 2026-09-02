@@ -9,6 +9,7 @@ library(stringr)
 variable_info_path <- "data/reference/IST_variables.csv"
 dictionary_path <- "data/reference/analysis_variable_dictionary.csv"
 analysis_data_path <- "data/processed/ist_analysis.csv"
+schema_summary_path <- "output/tables/validation/schema_summary.csv"
 
 # -----------------------
 # Build dictionary 
@@ -71,19 +72,50 @@ build_original_dictionary <- function(path) {
     )
 }
 
+# Assigns automatic analytical role
+classify_role <- function(variable, description = NA_character_) {
+    case_when(
+        str_detect(variable, "_alloc$") ~ "treatment",
+        str_detect(variable, "_6m$") ~ "outcome",
+        str_detect(variable, "_received$|_compliant$") ~ "post_treatment",
+        variable == "ONDRUG" ~ "post_treatment",
+        str_detect(
+            coalesce(description, ""),
+            regex("14 days|within 14", ignore_case = TRUE)
+        ) ~ "outcome",
+        variable == "TD" ~ "time_to_event",
+        str_detect(variable, "HOSPNUM|NCCODE") ~ "identifier",
+        TRUE ~ "baseline"
+    )
+}
+
 # Builds final dictionary
-build_analysis_dictionary <- function(data, original_dictionary) {
+build_analysis_dictionary <- function(data, original_dictionary, schema_summary) {
     tibble(variable = names(data)) |>
-    left_join(
-        original_dictionary,
-        by = "variable"
-    ) |>
-    mutate(
-        label = if_else(
-            is.na(label),
-            make_label_from_name(variable),
-            label
-        )
+        left_join(
+            original_dictionary,
+            by = "variable"
+        ) |>
+        left_join(
+            schema_summary |>
+            select(
+                variable=column,
+                statistical_type
+            ),
+            by = "variable"
+        ) |>
+        mutate(
+            label = if_else(
+                is.na(label),
+                make_label_from_name(variable),
+                label
+            ),
+            role = mapply(
+                classify_role,
+                variable,
+                description,
+                USE.NAMES = FALSE
+            )
     )
     
 }
@@ -112,8 +144,9 @@ apply_label_overrides <- function(dictionary) {
 # -----------------------
 main <- function() {
     data <- read_csv(analysis_data_path, show_col_types = FALSE)
+    schema_summary <- read_csv(schema_summary_path, show_col_types = FALSE)
     original_dictionary <- build_original_dictionary(variable_info_path)
-    dictionary <- build_analysis_dictionary(data, original_dictionary)
+    dictionary <- build_analysis_dictionary(data, original_dictionary, schema_summary)
     dictionary <- apply_label_overrides(dictionary)
     write_csv(dictionary, dictionary_path)
     print(head(dictionary, 20))
