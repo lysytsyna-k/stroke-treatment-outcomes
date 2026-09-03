@@ -3,84 +3,84 @@ HOSPNUM,Hospital number,NA,Hospital number,continuous,identifier
 RDELAY,Delay between stroke and randomisation in hours,hours,Treatment delay,continuous,baseline
 AGE,Age in years,years,Age,continuous,baseline
 RSBP,Systolic blood pressure at randomisation (mmHg),mmHg,Systolic blood pressure,continuous,baseline
-DASPLT,Discharged on long term aspirin (Y/N),NA,Discharged on long term aspirin,categorical,baseline
+DASPLT,Discharged on long term aspirin (Y/N),NA,Discharged on long term aspirin,categorical,other
 ONDRUG,Estimate of time in days on trial treatment,NA,Estimate of time in days on trial treatment,continuous,post_treatment
-DSCH,Non trial subcutaneous heparin (Y/N),NA,Non trial subcutaneous heparin,categorical,baseline
-DIVH,Non trial intravenous heparin (Y/N),NA,Non trial intravenous heparin,categorical,baseline
-DAP,Non trial antiplatelet drug (Y/N),NA,Non trial antiplatelet drug,categorical,baseline
-DOAC,Other anticoagulants (Y/N),NA,Other anticoagulants,categorical,baseline
-DGORM,Glycerol or manitol (Y/N),NA,Glycerol or manitol,categorical,baseline
-DSTER,Steroids (Y/N),NA,Steroids,categorical,baseline
-DCAA,Calcium antagonists (Y/N),NA,Calcium antagonists,categorical,baseline
-DHAEMD,Haemodilution (Y/N),NA,Haemodilution,categorical,baseline
-DCAREND,Carotid surgery (Y/N),NA,Carotid surgery,categorical,baseline
-DTHROMB,Thrombolysis (Y/N),NA,Thrombolysis,categorical,baseline
-DMAJNCH,Major non-cerebral haemorrhage (Y/N),NA,Major non-cerebral haemorrhage,categorical,baseline
-DSIDE,Other side effect (Y/N),NA,Other side effect,categorical,baseline
-DDIAGISC,Ischaemic stroke,NA,Ischaemic stroke,categorical,baseline
-DDIAGHA,Haemorrhagic stroke,NA,Haemorrhagic stroke,categorical,baseline
-DDIAGUN,Indeterminate stroke,NA,Indeterminate stroke,categorical,baseline
-DNOSTRK,Not a stroke,NA,Not a stroke,categorical,baseline
-DRSISC,Ischaemic recurrent stroke,NA,Ischaemic recurrent stroke,categorical,baseline
-DRSH,Haemorrhagic stroke,NA,Haemorrhagic stroke,categorical,baseline
-DRSUNK,Unknown type,NA,Unknown type,categorical,baseline
-DPE,Pulmonary embolism,NA,Pulmonary embolism,categorical,baseline
-DALIVE,Discharged alive from hospital,NA,Discharged alive from hospital,categorical,baseline
-DPLACE,Discharge destination (A-Home/B-Relatives home/C-Residential care/D-Nursing home/E-Other hospital departments/U-Unknown),NA,Discharge destination,categorical,baseline
-DDEAD,Dead on discharge form,NA,Dead on discharge form,categorical,baseline
-DDEADC,Cause of death (1-Initial stroke/2-Recurrent stroke (ischaemic or unknown)/3-Recurrent stroke (haemorrhagic)/4-Pneumonia/5-Coronary heart disease/6-Pulmonary embolism/7-Other vascular or unknown/8-Non-vascular/0-unknown),NA,Cause of death,categorical,baseline
-FDEADC,Cause of death (1-Initial stroke/2-Recurrent stroke (ischaemic or unknown)/3-Recurrent stroke (haemorrhagic)/4-Pneumonia/5-Coronary heart disease/6-Pulmonary embolism/7-Other vascular or unknown/8-Non-vascular/0-unknown),NA,Cause of death,categorical,baseline
-FPLACE,Place of residance at 6 month follow-up (A-Home/B-Relatives home/C-Residential care/D-Nursing home/E-Other hospital departments/U-Unknown),NA,Place of residance at 6 month follow-up,categorical,baseline
-FAP,On antiplatelet drugs,NA,On antiplatelet drugs,categorical,baseline
-FOAC,On anticoagulants,NA,On anticoagulants,categorical,baseline
-COUNTRY,Abbreviated country code,NA,Abbreviated country code,high-cardinality character,baseline
+DSCH,Non trial subcutaneous heparin (Y/N),NA,Non trial subcutaneous heparin,categorical,other
+DIVH,Non trial intravenous heparin (Y/N),NA,Non trial intravenous heparin,categorical,other
+DAP,Non trial antiplatelet drug (Y/N),NA,Non trial antiplatelet drug,categorical,other
+DOAC,Other anticoagulants (Y/N),NA,Other anticoagulants,categorical,other
+DGORM,Glycerol or manitol (Y/N),NA,Glycerol or manitol,categorical,other
+DSTER,Steroids (Y/N),NA,Steroids,categorical,other
+DCAA,Calcium antagonists (Y/N),NA,Calcium antagonists,categorical,other
+DHAEMD,Haemodilution (Y/N),NA,Haemodilution,categorical,other
+DCAREND,Carotid surgery (Y/N),NA,Carotid surgery,categorical,other
+DTHROMB,Thrombolysis (Y/N),NA,Thrombolysis,categorical,other
+DMAJNCH,Major non-cerebral haemorrhage (Y/N),NA,Major non-cerebral haemorrhage,categorical,other
+DSIDE,Other side effect (Y/N),NA,Other side effect,categorical,other
+DDIAGISC,Ischaemic stroke,NA,Ischaemic stroke,categorical,other
+DDIAGHA,Haemorrhagic stroke,NA,Haemorrhagic stroke,categorical,other
+DDIAGUN,Indeterminate stroke,NA,Indeterminate stroke,categorical,other
+DNOSTRK,Not a stroke,NA,Not a stroke,categorical,other
+DRSISC,Ischaemic recurrent stroke,NA,Ischaemic recurrent stroke,categorical,outcome_detail
+DRSH,Haemorrhagic stroke,NA,Haemorrhagic stroke,categorical,outcome_detail
+DRSUNK,Unknown type,NA,Unknown type,categorical,outcome_detail
+DPE,Pulmonary embolism,NA,Pulmonary embolism,categorical,outcome_detail
+DALIVE,Discharged alive from hospital,NA,Discharged alive from hospital,categorical,other
+DPLACE,Discharge destination (A-Home/B-Relatives home/C-Residential care/D-Nursing home/E-Other hospital departments/U-Unknown),NA,Discharge destination,categorical,other
+DDEAD,Dead on discharge form,NA,Dead on discharge form,categorical,outcome_detail
+DDEADC,Cause of death (1-Initial stroke/2-Recurrent stroke (ischaemic or unknown)/3-Recurrent stroke (haemorrhagic)/4-Pneumonia/5-Coronary heart disease/6-Pulmonary embolism/7-Other vascular or unknown/8-Non-vascular/0-unknown),NA,Cause of death,categorical,outcome_detail
+FDEADC,Cause of death (1-Initial stroke/2-Recurrent stroke (ischaemic or unknown)/3-Recurrent stroke (haemorrhagic)/4-Pneumonia/5-Coronary heart disease/6-Pulmonary embolism/7-Other vascular or unknown/8-Non-vascular/0-unknown),NA,Cause of death,categorical,other
+FPLACE,Place of residance at 6 month follow-up (A-Home/B-Relatives home/C-Residential care/D-Nursing home/E-Other hospital departments/U-Unknown),NA,Place of residance at 6 month follow-up,categorical,other
+FAP,On antiplatelet drugs,NA,On antiplatelet drugs,categorical,other
+FOAC,On anticoagulants,NA,On anticoagulants,categorical,other
+COUNTRY,Abbreviated country code,NA,Abbreviated country code,high-cardinality character,other
 NCCODE,Coding of compliance (see Table 3),NA,Coding of compliance,high-cardinality character,identifier
-DIED,NA,NA,Died,binary,baseline
+DIED,NA,NA,Died,binary,outcome_detail
 TD,Time of death or censoring in days,days,Time of death or censoring,continuous,time_to_event
-SET14D,"Know to be dead or alive at 14 days (1=Yes, 0=No); this does not necessarily mean that we know outcome at 6 monts – see OCCODE for this",NA,Know to be dead or alive at 14 days,binary,outcome
+SET14D,"Know to be dead or alive at 14 days (1=Yes, 0=No); this does not necessarily mean that we know outcome at 6 monts – see OCCODE for this",NA,Know to be dead or alive at 14 days,binary,other
 ID14,Indicator of death at 14 days,NA,Indicator of death at 14 days,binary,outcome
-DEAD1,Initial stroke,NA,Initial stroke,binary,baseline
-DEAD2,Reccurent ischaemic/unknown stroke,NA,Reccurent ischaemic/unknown stroke,binary,baseline
-DEAD3,Reccurent haemorrhagic stroke,NA,Reccurent haemorrhagic stroke,binary,baseline
-DEAD4,Pneumonia,NA,Pneumonia,binary,baseline
-DEAD5,Coronary heart disease,NA,Coronary heart disease,binary,baseline
-DEAD6,Pulmonary embolism,NA,Pulmonary embolism,binary,baseline
-DEAD7,Other vascular or unknown,NA,Other vascular or unknown,binary,baseline
-DEAD8,Non vascular,NA,Non vascular,binary,baseline
+DEAD1,Initial stroke,NA,Initial stroke,binary,outcome_detail
+DEAD2,Reccurent ischaemic/unknown stroke,NA,Reccurent ischaemic/unknown stroke,binary,outcome_detail
+DEAD3,Reccurent haemorrhagic stroke,NA,Reccurent haemorrhagic stroke,binary,outcome_detail
+DEAD4,Pneumonia,NA,Pneumonia,binary,outcome_detail
+DEAD5,Coronary heart disease,NA,Coronary heart disease,binary,outcome_detail
+DEAD6,Pulmonary embolism,NA,Pulmonary embolism,binary,outcome_detail
+DEAD7,Other vascular or unknown,NA,Other vascular or unknown,binary,outcome_detail
+DEAD8,Non vascular,NA,Non vascular,binary,outcome_detail
 H14,Cerebral bleed/heamorrhagic stroke within 14 days; this is slightly wider definition than DRSH an is used for analysis of cerebral bleeds,NA,Cerebral bleed/heamorrhagic stroke within 14 days,binary,outcome
 ISC14,Indicator of ischaemic stroke within 14 days,NA,Indicator of ischaemic stroke within 14 days,binary,outcome
 NK14,Indicator of indeterminate stroke within 14 days,NA,Indicator of indeterminate stroke within 14 days,binary,outcome
-STRK14,NA,NA,Strk14,binary,baseline
+STRK14,NA,NA,Strk14,binary,outcome
 HTI14,Indicator of haemorrhagic transformation within 14 days,NA,Indicator of haemorrhagic transformation within 14 days,binary,outcome
 PE14,Indicator of pulmonary embolism within 14 days,NA,Indicator of pulmonary embolism within 14 days,binary,outcome
-DVT14,Indicator of deep vein thrombosis on discharge form,NA,Indicator of deep vein thrombosis on discharge form,binary,baseline
+DVT14,Indicator of deep vein thrombosis on discharge form,NA,Indicator of deep vein thrombosis on discharge form,binary,outcome
 TRAN14,Indicator of major non-cerebral bleed within 14 days,NA,Indicator of major non-cerebral bleed within 14 days,binary,outcome
 NCB14,Indicator of any non-cerebral bleed within 14 days,NA,Indicator of any non-cerebral bleed within 14 days,binary,outcome
-aspirin_alloc,NA,NA,Aspirin alloc,NA,treatment
-heparin_alloc,NA,NA,Heparin alloc,NA,treatment
-dead_6m,NA,NA,Dead 6 months,NA,outcome
-recovered_6m,NA,NA,Recovered 6 months,NA,outcome
-dependent_6m,NA,NA,Dependent 6 months,NA,outcome
-outcome_6m,NA,NA,Outcome 6 months,NA,outcome
-sex,NA,NA,Sex,NA,baseline
-atrial_fibrillation,NA,NA,Atrial fibrillation,NA,baseline
-prior_aspirin,NA,NA,Prior aspirin,NA,baseline
-prior_heparin,NA,NA,Prior heparin,NA,baseline
-consciousness,NA,NA,Consciousness,NA,baseline
-stroke_subtype,NA,NA,Stroke subtype,NA,baseline
-deficit_face,NA,NA,Deficit face,NA,baseline
-deficit_arm,NA,NA,Deficit arm,NA,baseline
-deficit_leg,NA,NA,Deficit leg,NA,baseline
-deficit_dysphasia,NA,NA,Deficit dysphasia,NA,baseline
-deficit_hemianopia,NA,NA,Deficit hemianopia,NA,baseline
-deficit_visuospatial,NA,NA,Deficit visuospatial,NA,baseline
-deficit_brainstem,NA,NA,Deficit brainstem,NA,baseline
-deficit_other,NA,NA,Deficit other,NA,baseline
-wakeup_stroke,NA,NA,Wakeup stroke,NA,baseline
-ct_before_randomization,NA,NA,Ct before randomization,NA,baseline
-infarct_visible_ct,NA,NA,Infarct visible ct,NA,baseline
-aspirin_received,NA,NA,Aspirin received,NA,post_treatment
-heparin_low_received,NA,NA,Heparin low received,NA,post_treatment
-heparin_medium_received,NA,NA,Heparin medium received,NA,post_treatment
-aspirin_compliant,NA,NA,Aspirin compliant,NA,post_treatment
-heparin_compliant,NA,NA,Heparin compliant,NA,post_treatment
+aspirin_alloc,NA,NA,Aspirin alloc,binary,treatment
+heparin_alloc,NA,NA,Heparin alloc,categorical,treatment
+dead_6m,NA,NA,Dead 6 months,binary,outcome
+recovered_6m,NA,NA,Recovered 6 months,binary,outcome
+dependent_6m,NA,NA,Dependent 6 months,binary,outcome
+outcome_6m,NA,NA,Outcome 6 months,categorical,outcome
+sex,NA,NA,Sex,binary,baseline
+atrial_fibrillation,NA,NA,Atrial fibrillation,binary,baseline
+prior_aspirin,NA,NA,Prior aspirin,binary,baseline
+prior_heparin,NA,NA,Prior heparin,binary,baseline
+consciousness,NA,NA,Consciousness,categorical,baseline
+stroke_subtype,NA,NA,Stroke subtype,categorical,baseline
+deficit_face,NA,NA,Deficit face,binary,baseline
+deficit_arm,NA,NA,Deficit arm,binary,baseline
+deficit_leg,NA,NA,Deficit leg,binary,baseline
+deficit_dysphasia,NA,NA,Deficit dysphasia,binary,baseline
+deficit_hemianopia,NA,NA,Deficit hemianopia,binary,baseline
+deficit_visuospatial,NA,NA,Deficit visuospatial,binary,baseline
+deficit_brainstem,NA,NA,Deficit brainstem,binary,baseline
+deficit_other,NA,NA,Deficit other,binary,baseline
+wakeup_stroke,NA,NA,Wakeup stroke,binary,baseline
+ct_before_randomization,NA,NA,Ct before randomization,binary,baseline
+infarct_visible_ct,NA,NA,Infarct visible ct,binary,baseline
+aspirin_received,NA,NA,Aspirin received,binary,post_treatment
+heparin_low_received,NA,NA,Heparin low received,binary,post_treatment
+heparin_medium_received,NA,NA,Heparin medium received,binary,post_treatment
+aspirin_compliant,NA,NA,Aspirin compliant,binary,post_treatment
+heparin_compliant,NA,NA,Heparin compliant,binary,post_treatment

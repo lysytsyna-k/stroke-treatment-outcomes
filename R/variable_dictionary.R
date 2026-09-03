@@ -76,21 +76,51 @@ build_original_dictionary <- function(path) {
 classify_role <- function(variable, description = NA_character_) {
     case_when(
         str_detect(variable, "_alloc$") ~ "treatment",
-        str_detect(variable, "_6m$") ~ "outcome",
+
         str_detect(variable, "_received$|_compliant$") ~ "post_treatment",
         variable == "ONDRUG" ~ "post_treatment",
+
+        str_detect(variable, "_6m$") ~ "outcome",
+        str_detect(variable, "14$") ~ "outcome",
+
+        str_detect(variable, "^DRS|^DPE$|^DDEAD|^DIED$|^DEAD[1-8]$"
+        ) ~ "outcome_detail",
+
+        str_detect(variable, "^R") ~ "baseline",
+        variable %in% c("AGE", "SEX") ~ "baseline",
         str_detect(
-            coalesce(description, ""),
-            regex("14 days|within 14", ignore_case = TRUE)
-        ) ~ "outcome",
+            variable,
+            "^sex$|^atrial_|^prior_|^wakeup_|^ct_|^infarct_|^consciousness$|^stroke_subtype$|^deficit_"
+        ) ~ "baseline",
+
         variable == "TD" ~ "time_to_event",
-        str_detect(variable, "HOSPNUM|NCCODE") ~ "identifier",
-        TRUE ~ "baseline"
+        variable %in% c("HOSPNUM", "NCCODE") ~ "identifier",
+
+        TRUE ~ "other"
+    )
+}
+
+# Gets statistical type for the vars from clean data, 
+# where stat type is not available
+get_statistical_type <- function(x) {
+    n_unique <- n_distinct(x, na.rm = TRUE)
+
+    case_when(
+        n_unique <= 1 ~ "constant",
+        n_unique == 2 ~ "binary",
+        is.numeric(x) & n_unique > 10 ~ "continuous",
+        n_unique <= 10 ~ "categorical",
+        is.character(x) ~ "high-cardinality character",
+        TRUE ~ "other"
     )
 }
 
 # Builds final dictionary
 build_analysis_dictionary <- function(data, original_dictionary, schema_summary) {
+    inferred_types <- tibble(
+        variable = names(data),
+        inferred_type = vapply(data, get_statistical_type, character(1))
+    )
     tibble(variable = names(data)) |>
         left_join(
             original_dictionary,
@@ -104,7 +134,15 @@ build_analysis_dictionary <- function(data, original_dictionary, schema_summary)
             ),
             by = "variable"
         ) |>
+        left_join(
+            inferred_types,
+            by = "variable"
+        ) |>
         mutate(
+            statistical_type = coalesce(
+                statistical_type,
+                inferred_type
+            ),
             label = if_else(
                 is.na(label),
                 make_label_from_name(variable),
@@ -116,7 +154,8 @@ build_analysis_dictionary <- function(data, original_dictionary, schema_summary)
                 description,
                 USE.NAMES = FALSE
             )
-    )
+    ) |>
+    select(-inferred_type)
     
 }
 
@@ -149,7 +188,22 @@ main <- function() {
     dictionary <- build_analysis_dictionary(data, original_dictionary, schema_summary)
     dictionary <- apply_label_overrides(dictionary)
     write_csv(dictionary, dictionary_path)
-    print(head(dictionary, 20))
-}
+    print(head(dictionary))
+
+    # Verification
+    cat("\nDictionary summary\n")
+    print(dictionary |> count(role, statistical_type))
+
+    cat("\nMissing metadata\n")
+    print(dictionary |> filter( is.na(role) | is.na(statistical_type)))
+
+    cat("\nAnalysis variables\n")
+    dictionary |> filter(is.na(role) | is.na(statistical_type))
+
+    dictionary |> 
+    select(variable, label, statistical_type, role) |> 
+    arrange(role, statistical_type) |>
+    print(n = Inf)
+    }
 
 main()
