@@ -166,7 +166,11 @@ apply_label_overrides <- function(dictionary) {
         SEX = "Sex",
         RDELAY = "Treatment delay",
         RCONSC = "Conscious state",
-        RSBP = "Systolic blood pressure"
+        RSBP = "Systolic blood pressure",
+        ct_before_randomization = "CT before randomization",
+        infarct_visible_ct = "Infarct visible on CT",
+        aspirin_alloc = "Aspirin allocation",
+    heparin_alloc = "Heparin allocation"
     )
     dictionary |>
     mutate(

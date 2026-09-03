@@ -56,8 +56,8 @@ PE14,Indicator of pulmonary embolism within 14 days,NA,Indicator of pulmonary em
 DVT14,Indicator of deep vein thrombosis on discharge form,NA,Indicator of deep vein thrombosis on discharge form,binary,outcome
 TRAN14,Indicator of major non-cerebral bleed within 14 days,NA,Indicator of major non-cerebral bleed within 14 days,binary,outcome
 NCB14,Indicator of any non-cerebral bleed within 14 days,NA,Indicator of any non-cerebral bleed within 14 days,binary,outcome
-aspirin_alloc,NA,NA,Aspirin alloc,binary,treatment
-heparin_alloc,NA,NA,Heparin alloc,categorical,treatment
+aspirin_alloc,NA,NA,Aspirin allocation,binary,treatment
+heparin_alloc,NA,NA,Heparin allocation,categorical,treatment
 dead_6m,NA,NA,Dead 6 months,binary,outcome
 recovered_6m,NA,NA,Recovered 6 months,binary,outcome
 dependent_6m,NA,NA,Dependent 6 months,binary,outcome
@@ -77,8 +77,8 @@ deficit_visuospatial,NA,NA,Deficit visuospatial,binary,baseline
 deficit_brainstem,NA,NA,Deficit brainstem,binary,baseline
 deficit_other,NA,NA,Deficit other,binary,baseline
 wakeup_stroke,NA,NA,Wakeup stroke,binary,baseline
-ct_before_randomization,NA,NA,Ct before randomization,binary,baseline
-infarct_visible_ct,NA,NA,Infarct visible ct,binary,baseline
+ct_before_randomization,NA,NA,CT before randomization,binary,baseline
+infarct_visible_ct,NA,NA,Infarct visible on CT,binary,baseline
 aspirin_received,NA,NA,Aspirin received,binary,post_treatment
 heparin_low_received,NA,NA,Heparin low received,binary,post_treatment
 heparin_medium_received,NA,NA,Heparin medium received,binary,post_treatment

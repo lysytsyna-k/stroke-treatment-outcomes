@@ -13,7 +13,7 @@ theme(
     plot.subtitle = element_text(size=11),
     axis.title = element_text(size=12, face="bold"),
     axis.text = element_text(size=11),
-    panel.grid.inor = element_blank(),
+    panel.grid.minor = element_blank(),
     plot.margin = margin(12,15,12,12)
 )
 
@@ -117,7 +117,7 @@ plot_numeric_boxplot <- function(data, variables, dictionary, figure_dir) {
 
         plot_data <- data.frame(value=values)
 
-        p <- ggplot(plot_data, aes(y=value)) +
+        p <- ggplot(plot_data, aes(x=value, y="")) +
             geom_boxplot(
                 fill = plot_fill,
                 width = 0.35,
@@ -125,13 +125,16 @@ plot_numeric_boxplot <- function(data, variables, dictionary, figure_dir) {
                 outlier.alpha = 0.4
             ) +
             labs(
-                title = paste(label, "_boxplot"),
-                x = NULL,
-                y = label
+                title = label,
+                y = NULL,
+                x = label
             ) +
-            project_theme + theme(
-                axis.text.x = element_blank(),
-                axis.ticks.x = element_blank()
+            project_theme +
+            theme(
+                axis.text.y = element_blank(),
+                axis.ticks.y = element_blank(),
+                panel.grid.major.y = element_blank(),
+                panel.grid.minor.y = element_blank()
             )
 
             ggsave(
@@ -146,4 +149,65 @@ plot_numeric_boxplot <- function(data, variables, dictionary, figure_dir) {
             bg = "white"
         )
     }
+}
+
+# Categorical plots
+plot_categorical_bar <- function(summary_data, figure_dir) {
+    variables <- unique(summary_data$variable)
+
+    for (variable in variables) {
+        plot_data <- summary_data |>
+            filter(.data$variable == .env$variable) |>
+            arrange(percent) |>
+            mutate(
+                category = factor(category, levels = category)
+            )
+        label <- plot_data$label[1]
+        p <- ggplot(plot_data, aes(x = percent, y = category)) +
+            geom_col(fill = plot_fill, width = 0.7) +
+            geom_text(aes(label = paste0(round(percent, 1), "%")), 
+                            hjust = -0.15, size = 4) +
+            scale_x_continuous(expand = expansion(mult = c(0, 0.12))) +
+            labs(title = label, x = "Percent of patients", y = NULL) +
+            project_theme +
+            theme(panel.grid.major.y = element_blank())
+
+        ggsave(file.path(figure_dir, paste0(tolower(variable),"_bar.png")),
+            p,
+            width = 8,
+            height = 5,
+            dpi = 300,
+            bg = "white"
+        )
+    }
+}
+
+# Balance plot
+plot_balance <- function(balance_data, treatment, dictionary, figure_dir) {
+    treatment_label <- get_display_label(treatment, dictionary)
+
+    plot_data <- balance_data |>
+        arrange(absolute_smd) |>
+        mutate(label = factor(label, levels = label))
+
+    p <- ggplot(plot_data, aes(x = absolute_smd, y = label)) +
+        geom_point(size = 3, color = plot_fill) +
+        geom_vline(xintercept = 0.10, linetype = "dashed", color = mean_color) +
+        scale_x_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+        labs(
+            title = paste(treatment_label, "baseline balance"),
+            subtitle = "Maximum absolute standardized mean difference",
+            x = "Absolute standardized mean difference",
+            y = NULL
+        ) +
+        project_theme +
+        theme(panel.grid.major.y = element_blank())
+
+    ggsave(file.path(figure_dir, paste0(tolower(treatment), "_balance.png")),
+        p, 
+        width = 8, 
+        height = 7, 
+        dpi = 300, 
+        bg = "white"
+    )
 }

@@ -1,0 +1,39 @@
+variable,label,category,comparison,smd,absolute_smd
+atrial_fibrillation,Atrial fibrillation,No,No vs Yes,-0.021407780900914906,0.021407780900914906
+atrial_fibrillation,Atrial fibrillation,Yes,No vs Yes,0.02140778090091491,0.02140778090091491
+consciousness,Consciousness,Drowsy,No vs Yes,-2.723729848304321e-4,2.723729848304321e-4
+consciousness,Consciousness,Fully alert,No vs Yes,2.830070733944549e-4,2.830070733944549e-4
+consciousness,Consciousness,Unconscious,No vs Yes,-5.991484739179685e-5,5.991484739179685e-5
+ct_before_randomization,CT before randomization,No,No vs Yes,0.009926223863780989,0.009926223863780989
+ct_before_randomization,CT before randomization,Yes,No vs Yes,-0.009926223863780753,0.009926223863780753
+deficit_arm,Deficit arm,No,No vs Yes,0.007959035217966967,0.007959035217966967
+deficit_arm,Deficit arm,Yes,No vs Yes,-0.007959035217967128,0.007959035217967128
+deficit_brainstem,Deficit brainstem,No,No vs Yes,-0.0036717813559127566,0.0036717813559127566
+deficit_brainstem,Deficit brainstem,Yes,No vs Yes,0.0036717813559127566,0.0036717813559127566
+deficit_dysphasia,Deficit dysphasia,No,No vs Yes,-0.0027316819327570267,0.0027316819327570267
+deficit_dysphasia,Deficit dysphasia,Yes,No vs Yes,0.0027316819327569152,0.0027316819327569152
+deficit_face,Deficit face,No,No vs Yes,0.010249494330389014,0.010249494330389014
+deficit_face,Deficit face,Yes,No vs Yes,-0.010249494330388888,0.010249494330388888
+deficit_hemianopia,Deficit hemianopia,No,No vs Yes,0.006200115565364406,0.006200115565364406
+deficit_hemianopia,Deficit hemianopia,Yes,No vs Yes,-0.006200115565364476,0.006200115565364476
+deficit_leg,Deficit leg,No,No vs Yes,0.01068003774175833,0.01068003774175833
+deficit_leg,Deficit leg,Yes,No vs Yes,-0.010680037741758462,0.010680037741758462
+deficit_other,Deficit other,No,No vs Yes,0.002724666841646675,0.002724666841646675
+deficit_other,Deficit other,Yes,No vs Yes,-0.0027246668416466757,0.0027246668416466757
+deficit_visuospatial,Deficit visuospatial,No,No vs Yes,0.001433213409226009,0.001433213409226009
+deficit_visuospatial,Deficit visuospatial,Yes,No vs Yes,-0.001433213409226009,0.001433213409226009
+infarct_visible_ct,Infarct visible on CT,No,No vs Yes,0.014148415918288285,0.014148415918288285
+infarct_visible_ct,Infarct visible on CT,Yes,No vs Yes,-0.014148415918288401,0.014148415918288401
+prior_aspirin,Prior aspirin,No,No vs Yes,0.004930542150477782,0.004930542150477782
+prior_aspirin,Prior aspirin,Yes,No vs Yes,-0.0049305421504778485,0.0049305421504778485
+prior_heparin,Prior heparin,No,No vs Yes,0.004287738579920178,0.004287738579920178
+prior_heparin,Prior heparin,Yes,No vs Yes,-0.004287738579920063,0.004287738579920063
+sex,Sex,Female,No vs Yes,0.02139343101319492,0.02139343101319492
+sex,Sex,Male,No vs Yes,-0.02139343101319492,0.02139343101319492
+stroke_subtype,Stroke subtype,Lacunar syndrome,No vs Yes,-0.0014942644300495243,0.0014942644300495243
+stroke_subtype,Stroke subtype,Other,No vs Yes,-0.009542892383058266,0.009542892383058266
+stroke_subtype,Stroke subtype,Partial anterior circulation syndrome,No vs Yes,-0.0035693099168279258,0.0035693099168279258
+stroke_subtype,Stroke subtype,Posterior circulation syndrome,No vs Yes,0.00433704493946744,0.00433704493946744
+stroke_subtype,Stroke subtype,Total anterior circulation syndrome,No vs Yes,0.003574700024814095,0.003574700024814095
+wakeup_stroke,Wakeup stroke,No,No vs Yes,0.010058036658899023,0.010058036658899023
+wakeup_stroke,Wakeup stroke,Yes,No vs Yes,-0.010058036658898777,0.010058036658898777

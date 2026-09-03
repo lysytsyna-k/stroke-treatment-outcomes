@@ -1,0 +1,50 @@
+variable,label,category,count,percent
+atrial_fibrillation,Atrial fibrillation,Missing,984,5.06303061487008
+atrial_fibrillation,Atrial fibrillation,No,15282,78.63133521996399
+atrial_fibrillation,Atrial fibrillation,Yes,3169,16.305634165165937
+consciousness,Consciousness,Drowsy,4254,21.88834576794443
+consciousness,Consciousness,Fully alert,14921,76.7738615899151
+consciousness,Consciousness,Unconscious,260,1.3377926421404682
+ct_before_randomization,CT before randomization,No,6411,32.98687934139439
+ct_before_randomization,CT before randomization,Yes,13024,67.01312065860562
+deficit_arm,Deficit arm,Missing,123,0.63287882685876
+deficit_arm,Deficit arm,No,2667,13.72266529457165
+deficit_arm,Deficit arm,Yes,16645,85.64445587856959
+deficit_brainstem,Deficit brainstem,Missing,1592,8.191407254952406
+deficit_brainstem,Deficit brainstem,No,15704,80.80267558528428
+deficit_brainstem,Deficit brainstem,Yes,2139,11.005917159763314
+deficit_dysphasia,Deficit dysphasia,Missing,584,3.004888088500129
+deficit_dysphasia,Deficit dysphasia,No,10342,53.21327501929509
+deficit_dysphasia,Deficit dysphasia,Yes,8509,43.78183689220479
+deficit_face,Deficit face,Missing,247,1.2709030100334449
+deficit_face,Deficit face,No,5089,26.184718291741703
+deficit_face,Deficit face,Yes,14099,72.54437869822485
+deficit_hemianopia,Deficit hemianopia,Missing,3945,20.298430666323643
+deficit_hemianopia,Deficit hemianopia,No,12394,63.77154617957294
+deficit_hemianopia,Deficit hemianopia,Yes,3096,15.930023154103422
+deficit_leg,Deficit leg,Missing,255,1.3120658605608437
+deficit_leg,Deficit leg,No,4502,23.1643941342938
+deficit_leg,Deficit leg,Yes,14678,75.52354000514535
+deficit_other,Deficit other,Missing,1249,6.426550038590173
+deficit_other,Deficit other,No,16967,87.3012606122974
+deficit_other,Deficit other,Yes,1219,6.272189349112426
+deficit_visuospatial,Deficit visuospatial,Missing,3448,17.74118857730898
+deficit_visuospatial,Deficit visuospatial,No,12809,65.90686905068176
+deficit_visuospatial,Deficit visuospatial,Yes,3178,16.351942372009262
+infarct_visible_ct,Infarct visible on CT,No,13020,66.99253923334192
+infarct_visible_ct,Infarct visible on CT,Yes,6415,33.00746076665809
+prior_aspirin,Prior aspirin,Missing,984,5.06303061487008
+prior_aspirin,Prior aspirin,No,14511,74.6642655003859
+prior_aspirin,Prior aspirin,Yes,3940,20.27270388474402
+prior_heparin,Prior heparin,Missing,344,1.7700025726781579
+prior_heparin,Prior heparin,No,18655,95.9866220735786
+prior_heparin,Prior heparin,Yes,436,2.2433753537432466
+sex,Sex,Female,9028,46.4522768201698
+sex,Sex,Male,10407,53.5477231798302
+stroke_subtype,Stroke subtype,Lacunar syndrome,4657,23.961924363262156
+stroke_subtype,Stroke subtype,Other,57,0.293285310007718
+stroke_subtype,Stroke subtype,Partial anterior circulation syndrome,7855,40.41677386158992
+stroke_subtype,Stroke subtype,Posterior circulation syndrome,2228,11.463853871880628
+stroke_subtype,Stroke subtype,Total anterior circulation syndrome,4638,23.864162593259582
+wakeup_stroke,Wakeup stroke,No,13750,70.74864934396707
+wakeup_stroke,Wakeup stroke,Yes,5685,29.25135065603293

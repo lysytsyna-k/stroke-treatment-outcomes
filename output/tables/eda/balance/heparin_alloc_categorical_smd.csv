@@ -1,0 +1,115 @@
+variable,label,category,comparison,smd,absolute_smd
+atrial_fibrillation,Atrial fibrillation,No,Low vs Medium,-0.006757359459425863,0.006757359459425863
+atrial_fibrillation,Atrial fibrillation,No,Low vs None,-0.01923878722843315,0.01923878722843315
+atrial_fibrillation,Atrial fibrillation,Yes,Low vs Medium,0.006757359459425715,0.006757359459425715
+atrial_fibrillation,Atrial fibrillation,Yes,Low vs None,0.019238787228433144,0.019238787228433144
+consciousness,Consciousness,Drowsy,Low vs Medium,-0.001446774813341985,0.001446774813341985
+consciousness,Consciousness,Drowsy,Low vs None,-2.7956199513885327e-4,2.7956199513885327e-4
+consciousness,Consciousness,Fully alert,Low vs Medium,4.0844486318954756e-4,4.0844486318954756e-4
+consciousness,Consciousness,Fully alert,Low vs None,7.480996471730496e-4,7.480996471730496e-4
+consciousness,Consciousness,Unconscious,Low vs Medium,0.0036768870517184635,0.0036768870517184635
+consciousness,Consciousness,Unconscious,Low vs None,-0.0017503318323456496,0.0017503318323456496
+ct_before_randomization,CT before randomization,No,Low vs Medium,2.825737223092983e-4,2.825737223092983e-4
+ct_before_randomization,CT before randomization,No,Low vs None,0.0037898888919818264,0.0037898888919818264
+ct_before_randomization,CT before randomization,Yes,Low vs Medium,-2.825737223092983e-4,2.825737223092983e-4
+ct_before_randomization,CT before randomization,Yes,Low vs None,-0.0037898888919817085,0.0037898888919817085
+deficit_arm,Deficit arm,No,Low vs Medium,0.015891646132808024,0.015891646132808024
+deficit_arm,Deficit arm,No,Low vs None,0.012728014299526417,0.012728014299526417
+deficit_arm,Deficit arm,Yes,Low vs Medium,-0.0158916461328081,0.0158916461328081
+deficit_arm,Deficit arm,Yes,Low vs None,-0.012728014299526174,0.012728014299526174
+deficit_brainstem,Deficit brainstem,No,Low vs Medium,0.039383988450868525,0.039383988450868525
+deficit_brainstem,Deficit brainstem,No,Low vs None,0.03238585545284101,0.03238585545284101
+deficit_brainstem,Deficit brainstem,Yes,Low vs Medium,-0.039383988450868435,0.039383988450868435
+deficit_brainstem,Deficit brainstem,Yes,Low vs None,-0.032385855452841096,0.032385855452841096
+deficit_dysphasia,Deficit dysphasia,No,Low vs Medium,0.014995161206729755,0.014995161206729755
+deficit_dysphasia,Deficit dysphasia,No,Low vs None,-0.004832657542882834,0.004832657542882834
+deficit_dysphasia,Deficit dysphasia,Yes,Low vs Medium,-0.014995161206729866,0.014995161206729866
+deficit_dysphasia,Deficit dysphasia,Yes,Low vs None,0.004832657542882722,0.004832657542882722
+deficit_face,Deficit face,No,Low vs Medium,-0.0020712448705517642,0.0020712448705517642
+deficit_face,Deficit face,No,Low vs None,-0.008366169016695393,0.008366169016695393
+deficit_face,Deficit face,Yes,Low vs Medium,0.002071244870552015,0.002071244870552015
+deficit_face,Deficit face,Yes,Low vs None,0.008366169016695518,0.008366169016695518
+deficit_hemianopia,Deficit hemianopia,No,Low vs Medium,0.01644494530246541,0.01644494530246541
+deficit_hemianopia,Deficit hemianopia,No,Low vs None,0.009096931000445441,0.009096931000445441
+deficit_hemianopia,Deficit hemianopia,Yes,Low vs Medium,-0.016444945302465416,0.016444945302465416
+deficit_hemianopia,Deficit hemianopia,Yes,Low vs None,-0.009096931000445303,0.009096931000445303
+deficit_leg,Deficit leg,No,Low vs Medium,0.002963053355448369,0.002963053355448369
+deficit_leg,Deficit leg,No,Low vs None,0.017577400095761822,0.017577400095761822
+deficit_leg,Deficit leg,Yes,Low vs Medium,-0.002963053355448171,0.002963053355448171
+deficit_leg,Deficit leg,Yes,Low vs None,-0.01757740009576169,0.01757740009576169
+deficit_other,Deficit other,No,Low vs Medium,8.316440123201302e-5,8.316440123201302e-5
+deficit_other,Deficit other,No,Low vs None,0.00804815434909031,0.00804815434909031
+deficit_other,Deficit other,Yes,Low vs Medium,-8.316440123212326e-5,8.316440123212326e-5
+deficit_other,Deficit other,Yes,Low vs None,-0.008048154349090087,0.008048154349090087
+deficit_visuospatial,Deficit visuospatial,No,Low vs Medium,-0.012839481824779517,0.012839481824779517
+deficit_visuospatial,Deficit visuospatial,No,Low vs None,-0.015651892909721167,0.015651892909721167
+deficit_visuospatial,Deficit visuospatial,Yes,Low vs Medium,0.012839481824779588,0.012839481824779588
+deficit_visuospatial,Deficit visuospatial,Yes,Low vs None,0.015651892909721098,0.015651892909721098
+infarct_visible_ct,Infarct visible on CT,No,Low vs Medium,-0.039787133382818855,0.039787133382818855
+infarct_visible_ct,Infarct visible on CT,No,Low vs None,-0.03498516660968544,0.03498516660968544
+infarct_visible_ct,Infarct visible on CT,Yes,Low vs Medium,0.0397871333828191,0.0397871333828191
+infarct_visible_ct,Infarct visible on CT,Yes,Low vs None,0.03498516660968556,0.03498516660968556
+prior_aspirin,Prior aspirin,No,Low vs Medium,-0.021493941005248502,0.021493941005248502
+prior_aspirin,Prior aspirin,No,Low vs None,0.006090475555851882,0.006090475555851882
+prior_aspirin,Prior aspirin,Yes,Low vs Medium,0.021493941005248506,0.021493941005248506
+prior_aspirin,Prior aspirin,Yes,Low vs None,-0.006090475555851813,0.006090475555851813
+prior_heparin,Prior heparin,No,Low vs Medium,0.011029381820698328,0.011029381820698328
+prior_heparin,Prior heparin,No,Low vs None,0.005511291012601485,0.005511291012601485
+prior_heparin,Prior heparin,Yes,Low vs Medium,-0.011029381820698249,0.011029381820698249
+prior_heparin,Prior heparin,Yes,Low vs None,-0.005511291012601572,0.005511291012601572
+sex,Sex,Female,Low vs Medium,0.013752349280987276,0.013752349280987276
+sex,Sex,Female,Low vs None,0.025350284602339873,0.025350284602339873
+sex,Sex,Male,Low vs Medium,-0.013752349280987387,0.013752349280987387
+sex,Sex,Male,Low vs None,-0.025350284602339984,0.025350284602339984
+stroke_subtype,Stroke subtype,Lacunar syndrome,Low vs Medium,0.0025065358967742667,0.0025065358967742667
+stroke_subtype,Stroke subtype,Lacunar syndrome,Low vs None,0.0014364179554289165,0.0014364179554289165
+stroke_subtype,Stroke subtype,Other,Low vs Medium,0.044583860457550605,0.044583860457550605
+stroke_subtype,Stroke subtype,Other,Low vs None,0.019287645714524584,0.019287645714524584
+stroke_subtype,Stroke subtype,Partial anterior circulation syndrome,Low vs Medium,0.01637345698548759,0.01637345698548759
+stroke_subtype,Stroke subtype,Partial anterior circulation syndrome,Low vs None,0.014185830155447377,0.014185830155447377
+stroke_subtype,Stroke subtype,Posterior circulation syndrome,Low vs Medium,-0.03299220371595867,0.03299220371595867
+stroke_subtype,Stroke subtype,Posterior circulation syndrome,Low vs None,-0.027990404846534832,0.027990404846534832
+stroke_subtype,Stroke subtype,Total anterior circulation syndrome,Low vs Medium,-0.002323952123535658,0.002323952123535658
+stroke_subtype,Stroke subtype,Total anterior circulation syndrome,Low vs None,0.001195650201463091,0.001195650201463091
+wakeup_stroke,Wakeup stroke,No,Low vs Medium,-0.02377229901871934,0.02377229901871934
+wakeup_stroke,Wakeup stroke,No,Low vs None,-0.018858936004763356,0.018858936004763356
+wakeup_stroke,Wakeup stroke,Yes,Low vs Medium,0.02377229901871946,0.02377229901871946
+wakeup_stroke,Wakeup stroke,Yes,Low vs None,0.018858936004763356,0.018858936004763356
+atrial_fibrillation,Atrial fibrillation,No,Medium vs None,-0.0124814879713731,0.0124814879713731
+atrial_fibrillation,Atrial fibrillation,Yes,Medium vs None,0.012481487971373245,0.012481487971373245
+consciousness,Consciousness,Drowsy,Medium vs None,0.0011672127820340507,0.0011672127820340507
+consciousness,Consciousness,Fully alert,Medium vs None,3.3965477367686893e-4,3.3965477367686893e-4
+consciousness,Consciousness,Unconscious,Medium vs None,-0.005426993879233061,0.005426993879233061
+ct_before_randomization,CT before randomization,No,Medium vs None,0.0035073144157883895,0.0035073144157883895
+ct_before_randomization,CT before randomization,Yes,Medium vs None,-0.0035073144157882715,0.0035073144157882715
+deficit_arm,Deficit arm,No,Medium vs None,-0.0031637367514075936,0.0031637367514075936
+deficit_arm,Deficit arm,Yes,Medium vs None,0.003163736751407914,0.003163736751407914
+deficit_brainstem,Deficit brainstem,No,Medium vs None,-0.007000448376330097,0.007000448376330097
+deficit_brainstem,Deficit brainstem,Yes,Medium vs None,0.007000448376329923,0.007000448376329923
+deficit_dysphasia,Deficit dysphasia,No,Medium vs None,-0.01982817260955333,0.01982817260955333
+deficit_dysphasia,Deficit dysphasia,Yes,Medium vs None,0.01982817260955333,0.01982817260955333
+deficit_face,Deficit face,No,Medium vs None,-0.006294908378711312,0.006294908378711312
+deficit_face,Deficit face,Yes,Medium vs None,0.006294908378711187,0.006294908378711187
+deficit_hemianopia,Deficit hemianopia,No,Medium vs None,-0.007347971544414529,0.007347971544414529
+deficit_hemianopia,Deficit hemianopia,Yes,Medium vs None,0.007347971544414668,0.007347971544414668
+deficit_leg,Deficit leg,No,Medium vs None,0.014614269618849497,0.014614269618849497
+deficit_leg,Deficit leg,Yes,Medium vs None,-0.014614269618849565,0.014614269618849565
+deficit_other,Deficit other,No,Medium vs None,0.007964994571218891,0.007964994571218891
+deficit_other,Deficit other,Yes,Medium vs None,-0.007964994571218558,0.007964994571218558
+deficit_visuospatial,Deficit visuospatial,No,Medium vs None,-0.0028123913013914305,0.0028123913013914305
+deficit_visuospatial,Deficit visuospatial,Yes,Medium vs None,0.0028123913013912917,0.0028123913013912917
+infarct_visible_ct,Infarct visible on CT,No,Medium vs None,0.004800628558143866,0.004800628558143866
+infarct_visible_ct,Infarct visible on CT,Yes,Medium vs None,-0.004800628558143983,0.004800628558143983
+prior_aspirin,Prior aspirin,No,Medium vs None,0.027584665464871462,0.027584665464871462
+prior_aspirin,Prior aspirin,Yes,Medium vs None,-0.0275846654648714,0.0275846654648714
+prior_heparin,Prior heparin,No,Medium vs None,-0.0055192905866045545,0.0055192905866045545
+prior_heparin,Prior heparin,Yes,Medium vs None,0.005519290586604386,0.005519290586604386
+sex,Sex,Female,Medium vs None,0.011596932907214686,0.011596932907214686
+sex,Sex,Male,Medium vs None,-0.011596932907214686,0.011596932907214686
+stroke_subtype,Stroke subtype,Lacunar syndrome,Medium vs None,-0.0010701175158256604,0.0010701175158256604
+stroke_subtype,Stroke subtype,Other,Medium vs None,-0.02599390102455898,0.02599390102455898
+stroke_subtype,Stroke subtype,Partial anterior circulation syndrome,Medium vs None,-0.002187507149006871,0.002187507149006871
+stroke_subtype,Stroke subtype,Posterior circulation syndrome,Medium vs None,0.005003159611236108,0.005003159611236108
+stroke_subtype,Stroke subtype,Total anterior circulation syndrome,Medium vs None,0.003519603388707376,0.003519603388707376
+wakeup_stroke,Wakeup stroke,No,Medium vs None,0.004912985247956833,0.004912985247956833
+wakeup_stroke,Wakeup stroke,Yes,Medium vs None,-0.004912985247956954,0.004912985247956954

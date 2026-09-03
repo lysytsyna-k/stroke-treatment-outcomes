@@ -1,0 +1,21 @@
+variable,label,comparison,smd,absolute_smd,category,type
+AGE,Age,Low vs Medium,0.013771432929319332,0.013771432929319332,NA,Continuous
+RDELAY,Treatment delay,Low vs None,0.019888226232099168,0.019888226232099168,NA,Continuous
+RSBP,Systolic blood pressure,Low vs Medium,-0.04664036805086527,0.04664036805086527,NA,Continuous
+atrial_fibrillation,Atrial fibrillation,Low vs None,-0.01923878722843315,0.01923878722843315,No,Categorical
+consciousness,Consciousness,Medium vs None,-0.005426993879233061,0.005426993879233061,Unconscious,Categorical
+ct_before_randomization,CT before randomization,Low vs None,0.0037898888919818264,0.0037898888919818264,No,Categorical
+deficit_arm,Deficit arm,Low vs Medium,-0.0158916461328081,0.0158916461328081,Yes,Categorical
+deficit_brainstem,Deficit brainstem,Low vs Medium,0.039383988450868525,0.039383988450868525,No,Categorical
+deficit_dysphasia,Deficit dysphasia,Medium vs None,-0.01982817260955333,0.01982817260955333,No,Categorical
+deficit_face,Deficit face,Low vs None,0.008366169016695518,0.008366169016695518,Yes,Categorical
+deficit_hemianopia,Deficit hemianopia,Low vs Medium,-0.016444945302465416,0.016444945302465416,Yes,Categorical
+deficit_leg,Deficit leg,Low vs None,0.017577400095761822,0.017577400095761822,No,Categorical
+deficit_other,Deficit other,Low vs None,0.00804815434909031,0.00804815434909031,No,Categorical
+deficit_visuospatial,Deficit visuospatial,Low vs None,-0.015651892909721167,0.015651892909721167,No,Categorical
+infarct_visible_ct,Infarct visible on CT,Low vs Medium,0.0397871333828191,0.0397871333828191,Yes,Categorical
+prior_aspirin,Prior aspirin,Medium vs None,0.027584665464871462,0.027584665464871462,No,Categorical
+prior_heparin,Prior heparin,Low vs Medium,0.011029381820698328,0.011029381820698328,No,Categorical
+sex,Sex,Low vs None,-0.025350284602339984,0.025350284602339984,Male,Categorical
+stroke_subtype,Stroke subtype,Low vs Medium,0.044583860457550605,0.044583860457550605,Other,Categorical
+wakeup_stroke,Wakeup stroke,Low vs Medium,0.02377229901871946,0.02377229901871946,Yes,Categorical

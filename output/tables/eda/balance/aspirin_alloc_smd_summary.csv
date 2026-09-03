@@ -1,0 +1,21 @@
+variable,label,comparison,smd,absolute_smd,category,type
+AGE,Age,No vs Yes,0.0030856474196931704,0.0030856474196931704,NA,Continuous
+RDELAY,Treatment delay,No vs Yes,0.0020165945876051074,0.0020165945876051074,NA,Continuous
+RSBP,Systolic blood pressure,No vs Yes,-0.011340757970417977,0.011340757970417977,NA,Continuous
+atrial_fibrillation,Atrial fibrillation,No vs Yes,0.02140778090091491,0.02140778090091491,Yes,Categorical
+consciousness,Consciousness,No vs Yes,2.830070733944549e-4,2.830070733944549e-4,Fully alert,Categorical
+ct_before_randomization,CT before randomization,No vs Yes,0.009926223863780989,0.009926223863780989,No,Categorical
+deficit_arm,Deficit arm,No vs Yes,-0.007959035217967128,0.007959035217967128,Yes,Categorical
+deficit_brainstem,Deficit brainstem,No vs Yes,-0.0036717813559127566,0.0036717813559127566,No,Categorical
+deficit_dysphasia,Deficit dysphasia,No vs Yes,-0.0027316819327570267,0.0027316819327570267,No,Categorical
+deficit_face,Deficit face,No vs Yes,0.010249494330389014,0.010249494330389014,No,Categorical
+deficit_hemianopia,Deficit hemianopia,No vs Yes,-0.006200115565364476,0.006200115565364476,Yes,Categorical
+deficit_leg,Deficit leg,No vs Yes,-0.010680037741758462,0.010680037741758462,Yes,Categorical
+deficit_other,Deficit other,No vs Yes,-0.0027246668416466757,0.0027246668416466757,Yes,Categorical
+deficit_visuospatial,Deficit visuospatial,No vs Yes,0.001433213409226009,0.001433213409226009,No,Categorical
+infarct_visible_ct,Infarct visible on CT,No vs Yes,-0.014148415918288401,0.014148415918288401,Yes,Categorical
+prior_aspirin,Prior aspirin,No vs Yes,-0.0049305421504778485,0.0049305421504778485,Yes,Categorical
+prior_heparin,Prior heparin,No vs Yes,0.004287738579920178,0.004287738579920178,No,Categorical
+sex,Sex,No vs Yes,0.02139343101319492,0.02139343101319492,Female,Categorical
+stroke_subtype,Stroke subtype,No vs Yes,-0.009542892383058266,0.009542892383058266,Other,Categorical
+wakeup_stroke,Wakeup stroke,No vs Yes,0.010058036658899023,0.010058036658899023,No,Categorical

@@ -1,0 +1,6 @@
+variable,label,category,count,percent
+aspirin_alloc,Aspirin allocation,No,9715,49.98713660921019
+aspirin_alloc,Aspirin allocation,Yes,9720,50.01286339078981
+heparin_alloc,Heparin allocation,Low,4861,25.01157705171083
+heparin_alloc,Heparin allocation,Medium,4856,24.985850270131206
+heparin_alloc,Heparin allocation,None,9718,50.00257267815796
