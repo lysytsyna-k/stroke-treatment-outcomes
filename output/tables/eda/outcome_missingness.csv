@@ -1,0 +1,15 @@
+variable,label,missing,observations,missing_percent
+ID14,Indicator of death at 14 days,0,19435,0
+H14,Cerebral bleed/heamorrhagic stroke within 14 days,0,19435,0
+ISC14,Indicator of ischaemic stroke within 14 days,0,19435,0
+NK14,Indicator of indeterminate stroke within 14 days,0,19435,0
+STRK14,Strk14,0,19435,0
+HTI14,Indicator of haemorrhagic transformation within 14 days,0,19435,0
+PE14,Indicator of pulmonary embolism within 14 days,0,19435,0
+DVT14,Indicator of deep vein thrombosis on discharge form,0,19435,0
+TRAN14,Indicator of major non-cerebral bleed within 14 days,0,19435,0
+NCB14,Indicator of any non-cerebral bleed within 14 days,0,19435,0
+dead_6m,Dead 6 months,156,19435,0.802675585284281
+recovered_6m,Recovered 6 months,4630,19435,23.822999742732183
+dependent_6m,Dependent 6 months,4553,19435,23.42680730640597
+outcome_6m,Outcome 6 months,150,19435,0.7718034473887316

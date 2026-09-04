@@ -1,0 +1,6 @@
+variable,label,category,count,percent
+outcome_6m,Outcome 6 months,Dead,4241,21.82145613583741
+outcome_6m,Outcome 6 months,Dependent,7884,40.56598919475174
+outcome_6m,Outcome 6 months,Missing,150,0.7718034473887316
+outcome_6m,Outcome 6 months,Not recovered,3864,19.881656804733726
+outcome_6m,Outcome 6 months,Recovered,3296,16.959094417288398

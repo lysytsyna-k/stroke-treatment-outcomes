@@ -211,3 +211,25 @@ plot_balance <- function(balance_data, treatment, dictionary, figure_dir) {
         bg = "white"
     )
 }
+
+# Outcomes plot
+plot_binary_outcome_rates <- function(summary_data, figure_dir) {
+    plot_data <- summary_data |>
+        arrange(event_rate) |>
+        mutate(label = factor(label, levels = label))
+
+    p <- ggplot(plot_data, aes(x = event_rate, y = label)) +
+        geom_col(fill = plot_fill, width = 0.7) +
+        geom_text(aes(label = paste0(round(event_rate, 1), "%")), hjust = -0.15, size = 4) +
+        scale_x_continuous(expand = expansion(mult = c(0, 0.12))) +
+        labs(
+            title = "Clinical outcome rates",
+            x = "Percent of patients",
+            y = NULL
+        ) +
+        project_theme +
+        theme(panel.grid.major.y = element_blank())
+
+    ggsave(file.path(figure_dir, "binary_outcome_rates.png"),
+           p, width = 9, height = 7, dpi = 300, bg = "white")
+}

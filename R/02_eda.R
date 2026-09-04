@@ -16,6 +16,7 @@ categorical_figure_dir <- file.path(figure_dir, "categorical")
 treatment_figure_dir <- file.path(figure_dir, "treatment")
 balance_table_dir <- file.path(table_dir, "balance")
 balance_figure_dir <- file.path(figure_dir, "balance")
+outcome_figure_dir <- file.path(figure_dir, "outcomes")
 
 # Extracts variables for EDA
 get_analysis_vars <- function(dictionary, data, target_role, target_type = NULL) {
@@ -159,6 +160,39 @@ prepare_balance_summary <- function(numeric_smd, categorical_smd) {
 }
 
 # -----------------------
+# Outcomes
+# -----------------------
+
+# Summarizes binary outcomes
+summarize_binary_outcomes <- function(data, variables, dictionary) {
+    data |>
+        select(all_of(variables)) |>
+        pivot_longer(everything(), names_to = "variable", values_to = "value") |>
+        group_by(variable) |>
+        summarise(
+            observations = sum(!is.na(value)),
+            missing = sum(is.na(value)),
+            events = sum(value == 1, na.rm = TRUE),
+            event_rate = 100 * events / observations,
+            .groups = "drop"
+        ) |>
+        add_labels(dictionary)
+}
+
+# Summarizes outcome missingness
+summarize_missingness <- function(data, variables, dictionary) {
+    data |>
+        select(all_of(variables)) |>
+        summarise(across(everything(), ~ sum(is.na(.)))) |>
+        pivot_longer(everything(), names_to = "variable", values_to = "missing") |>
+        mutate(
+            observations = nrow(data),
+            missing_percent = 100 * missing / observations
+        ) |>
+        add_labels(dictionary)
+}
+
+# -----------------------
 # Main
 # -----------------------
 
@@ -173,6 +207,7 @@ main <- function() {
     dir.create(treatment_figure_dir, recursive = TRUE, showWarnings = FALSE)
     dir.create(balance_table_dir, recursive = TRUE, showWarnings = FALSE)
     dir.create(balance_figure_dir, recursive = TRUE, showWarnings = FALSE)
+    dir.create(outcome_figure_dir, recursive = TRUE, showWarnings = FALSE)
 
     # Variable types
     continuous_baseline_vars <- get_analysis_vars(dictionary, data, "baseline", "continuous")
@@ -185,7 +220,7 @@ main <- function() {
     # Numeric
     # -------------------
     numeric_baseline <- summarize_numeric(data, continuous_baseline_vars, dictionary)
-    print(numeric_baseline, width = Inf)
+    #print(numeric_baseline, width = Inf)
     write_csv(numeric_baseline, file.path(table_dir, "baseline_numeric_summary.csv"))
     plot_numeric_histogram(data, continuous_baseline_vars, dictionary, numeric_figure_dir)
     plot_numeric_boxplot(data, continuous_baseline_vars, dictionary, numeric_figure_dir)
@@ -194,7 +229,7 @@ main <- function() {
     # Categorical
     # -------------------
     categorical_baseline <- summarize_categorical(data, categorical_baseline_vars, dictionary)
-    print(categorical_baseline, n = Inf)
+    #print(categorical_baseline, n = Inf)
     write_csv(categorical_baseline, file.path(table_dir, "baseline_categorical_summary.csv"))
     plot_categorical_bar(categorical_baseline, categorical_figure_dir)
 
@@ -202,7 +237,7 @@ main <- function() {
     # Treatment allocation
     # -------------------
     treatment_summary <- summarize_categorical(data, treatment_vars, dictionary)
-    print(treatment_summary, n = Inf)
+    #print(treatment_summary, n = Inf)
     write_csv(treatment_summary, file.path(table_dir, "treatment_allocation_summary.csv"))
     plot_categorical_bar(treatment_summary, treatment_figure_dir)
 
@@ -223,6 +258,26 @@ main <- function() {
         write_csv(balance_summary, file.path(balance_table_dir, paste0(treatment, "_smd_summary.csv")))
         plot_balance(balance_summary, treatment, dictionary, balance_figure_dir)
     }
+
+    # Outcome overview
+    # -------------------
+    binary_outcome_summary <- summarize_binary_outcomes(data, binary_outcome_vars, dictionary)
+    binary_outcome_plot <- binary_outcome_summary |>
+        filter(!variable %in% c("dependent_6m", "recovered_6m"))
+    categorical_outcome_summary <- summarize_categorical(data, categorical_outcome_vars, dictionary)
+    outcome_missingness <- summarize_missingness(data, c(binary_outcome_vars, categorical_outcome_vars), dictionary)
+
+    #print(binary_outcome_summary, n = Inf)
+    #print(categorical_outcome_summary, n = Inf)
+    #print(outcome_missingness, n = Inf)
+
+    write_csv(binary_outcome_summary, file.path(table_dir, "binary_outcome_summary.csv"))
+    write_csv(categorical_outcome_summary, file.path(table_dir, "categorical_outcome_summary.csv"))
+    write_csv(outcome_missingness, file.path(table_dir, "outcome_missingness.csv"))
+
+    plot_binary_outcome_rates(binary_outcome_plot, outcome_figure_dir)
+    plot_categorical_bar(categorical_outcome_summary, outcome_figure_dir)
+
 }
 
 main()
