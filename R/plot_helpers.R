@@ -233,3 +233,19 @@ plot_binary_outcome_rates <- function(summary_data, figure_dir) {
     ggsave(file.path(figure_dir, "binary_outcome_rates.png"),
            p, width = 9, height = 7, dpi = 300, bg = "white")
 }
+
+# Treatment effects
+plot_risk_differences <- function(data, title, file_path) {
+    plot <- ggplot(data, aes(x = risk_difference * 100, y = reorder(label, risk_difference))) +
+        geom_vline(xintercept = 0, linetype = "dashed") +
+        geom_errorbarh(aes(xmin = ci_lower * 100, xmax = ci_upper * 100), height = 0.2) +
+        geom_point(size = 2.5) +
+        labs(
+            title = title,
+            x = "Risk difference (percentage points)",
+            y = NULL
+        ) +
+        project_theme
+
+    ggsave(file_path, plot, width = 9, height = 6)
+}
