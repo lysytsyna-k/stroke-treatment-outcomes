@@ -241,6 +241,19 @@ main <- function() {
     write_csv(treatment_summary, file.path(table_dir, "treatment_allocation_summary.csv"))
     plot_categorical_bar(treatment_summary, treatment_figure_dir)
 
+    treatment_combo_counts <- data |>
+        mutate(
+            treatment_combo = case_when(
+                aspirin_alloc == 0 & heparin_alloc == "None" ~ "No aspirin + No heparin",
+                aspirin_alloc == 1 & heparin_alloc == "None" ~ "Aspirin + No heparin",
+                aspirin_alloc == 0 & heparin_alloc == "Low" ~ "No aspirin + Low heparin",
+                aspirin_alloc == 1 & heparin_alloc == "Low" ~ "Aspirin + Low heparin",
+                aspirin_alloc == 0 & heparin_alloc == "Medium" ~ "No aspirin + Medium heparin",
+                aspirin_alloc == 1 & heparin_alloc == "Medium" ~ "Aspirin + Medium heparin"
+            )
+        ) |>
+        count(treatment_combo, name = "patients")
+    write_csv(treatment_combo_counts, file.path(table_dir, "treatment_combination_counts.csv"))
     # -------------------
     # Baseline balance
     # -------------------
@@ -266,10 +279,6 @@ main <- function() {
         filter(!variable %in% c("dependent_6m", "recovered_6m"))
     categorical_outcome_summary <- summarize_categorical(data, categorical_outcome_vars, dictionary)
     outcome_missingness <- summarize_missingness(data, c(binary_outcome_vars, categorical_outcome_vars), dictionary)
-
-    #print(binary_outcome_summary, n = Inf)
-    #print(categorical_outcome_summary, n = Inf)
-    #print(outcome_missingness, n = Inf)
 
     write_csv(binary_outcome_summary, file.path(table_dir, "binary_outcome_summary.csv"))
     write_csv(categorical_outcome_summary, file.path(table_dir, "categorical_outcome_summary.csv"))
